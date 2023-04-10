@@ -69,9 +69,11 @@ The reason daemons sometimes create their own user can vary, but you can general
 - Prevents users from accidentally tampering with the daemon's files/resources
 - Provides clean separation between itself and other daemons
 
-Worth noting is that these daemon users that get created automatically with software are not intended for human users and you typically won't be logging into them the same way you would a normal user.
+Worth noting is that these daemon users that get created automatically with software are not intended for human users, and you typically won't be logging into them the same way you would a normal user.
 
-That being said, sometimes we create daemon users manually to isolate a specific process from the rest of the system. These kinds of users we can optionally log into.
+That being said, sometimes we create daemon users manually to isolate a specific
+process from the rest of the system. We can then optionally log into these kinds
+of users.
 
 ## Groups
 
@@ -89,7 +91,7 @@ Once your group is created, you can add users to a group using the `usermod` com
 $ sudo usermod -a -G students john
 ```
 
-And remove users from a group using the `gpasswd` commant:
+And remove users from a group using the `gpasswd` command:
 
 ```bash
 $ sudo gpasswd -d john students
@@ -101,7 +103,9 @@ You can also use the `deluser` command passing in the groupname:
 $ sudo deluser john students
 ```
 
-Be careful with this one, however, as accidentally pressing `enter`/`return` before finishing the prompt could delete a user altogether instead of remove a user from the intended group!
+Be careful with this one, however, as accidentally pressing `enter`/`return`
+before finishing the prompt could delete a user altogether instead of removing
+a user from the intended group!
 
 ## Conclusion
 
